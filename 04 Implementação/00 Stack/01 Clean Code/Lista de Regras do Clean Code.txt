@@ -1,0 +1,78 @@
+
+
+Tabela 1- Regras Gerais / Regras de Design / Regras de Entendimento / Regras de Nomenclatura / Regras de Funções para Clean Code
+
+Grupo	                Regra
+Regras Gerais	        Siga as convenções padrões.
+ 	                    KISS – Keep It Simple Stupid (mantenha isso estupidamente simples).
+ 	                    DRY – Don’t Repeat Yourself (não repita/duplique informações).
+ 	                    Regra do escoteiro (mantenha o acampamento mais limpo do que quando você o encontrou).
+ 	                    Sempre encontre a causa-raiz.
+
+Regras de Design	    Mantenha dados de configuração em altos níveis.
+ 	                    Prefira polimorfismo a if/else ou switch/case.
+ 	                    Separe código multi-threading.
+ 	                    Utilize async como sufixo.
+ 	                    Evite o excesso de configurações.
+ 	                    Use injeção de dependência.
+ 	                    Lei de Demeter (uma classe só deve ter ciência de suas dependências diretas).
+
+Regras de Entendimento	Seja consistente.
+ 	                    Utilize variáveis explicativas.
+ 	                    Encapsule condições de contorno.
+ 	                    Prefira objetos de valor a tipos primitivos.
+ 	                    Evite dependências lógicas.
+ 	                    Evite condicionais negativas.
+
+Regras de Nomenclatura	Escolha nomes descritivos e não ambíguos.
+ 	                    Faça distinções significativas.
+ 	                    Utilize nomes pronunciáveis.
+ 	                    Utilize nomes que permitam busca.
+ 	                    Substitua números mágicos por constantes nomeadas.
+ 	                    Evite encoding.
+
+Regras de Funções	    Mantenha o escopo pequeno.
+ 	                    Faça uma coisa só.
+ 	                    Utilize nomes descritivos.
+ 	                    Prefira poucos parâmetros.
+ 	                    Evite efeitos colaterais.
+ 	                    Não utilize parâmetros de flag para decisões.
+
+
+ 
+Tabela 2- Regras de Comentários / Regras de Estrutura de Código-Fonte / Regras de Objetos e Estruturas / Regras de Testes / Regras de Code Smells para Clean Code
+
+Grupo	                                Regra
+Regras de Comentários	                Sempre tente se explicar no código.
+ 	                                    Não seja redundante.
+ 	                                    Nunca feche os comentários.
+ 	                                    Não comente código que não será mais usado.
+ 	                                    Utilize para explicação da intenção.
+ 	                                    Utilize para clarificar o código.
+ 	                                    Use para alertar consequências.
+Regras de Estrutura de Código-Fonte	    Separe os conceitos verticalmente.
+ 	                                    Declare variáveis mais próximas do seu uso.
+ 	                                    Funções dependentes devem estar próximas.
+ 	                                    Funções similares devem estar próximas.
+ 	                                    Declare as funções de cima para baixo.
+ 	                                    Mantenha curtas linhas.
+ 	                                    Não utilize alinhamento horizontal.
+ 	                                    Utilize espaço em branco para associar e desassociar, dependendo da relação.
+ 	                                    Não quebre a indentação.
+Regras de Objetos e Estruturas	        Esconda estruturas internas.
+ 	                                    Prefira estruturas de dados.
+ 	                                    Evite estruturas híbridas (metade objeto e metade dados).
+ 	                                    Mantenha o escopo pequeno.
+ 	                                    Faça uma coisa só.
+ 	                                    Considere um número pequeno de variáveis de instância.
+ 	                                    As classes base não devem saber nada sobre suas derivadas.
+ 	                                    É melhor ter muitos métodos com sobrecarga do que tomadas de decisão em métodos (seleções de comportamento).
+ 	                                    Prefira métodos não estáticos a estáticos.
+Regras de Testes	                    Utilize um assert por teste.
+ 	                                    FIRST – Fast, Independent, Repeatable, Self-Validating and Timely (testes devem ser rápidos, independentes, repetíveis, autovalidados e oportunos).
+Regras de Code Smells	                Característica da rigidez (software difícil de ser modificado).
+ 	                                    Característica da fragilidade (uma mudança impacta em vários pontos).
+ 	                                    Característica de imobilidade (reuso envolve alto risco e esforço).
+ 	                                    Complexidade desnecessária.
+ 	                                    Repetição desnecessária.
+ 	                                    Característica da opacidade (código difícil de entender).
