@@ -1,30 +1,45 @@
 # Product Backlog - histórias de usuários
 
-Product Backlog
+Product Backlog: Lista de funcionalidades (histórias de usuários) que devem ser implementadas no sistema.
 
-1. Autenticação e Registro
+# Product Backlog
 
-    US001.1: Como usuário, desejo realizar o login com e-mail e senha para acessar minha conta.
-    US001.2: Como usuário, desejo configurar autenticação de dois fatores (2FA) para aumentar a segurança da minha conta.
-    US001.3: Como novo usuário, desejo me registrar criando uma conta com e-mail e senha para acessar os serviços bancários.
-    US001.4: Como usuário, desejo redefinir minha senha em caso de esquecimento.
+## 1 - Registro de Usuário
 
-2. Gestão de Conta
+-   **US001.1**: Como um usuário, quero me registrar na plataforma para poder acessar minha conta bancária.
+-   **US001.2**: O sistema deve verificar se o e-mail já está registrado e retornar uma mensagem de erro se houver duplicação.
 
-    US002.1: Como usuário, desejo consultar o saldo da minha conta em tempo real.
-    US002.2: Como usuário, desejo visualizar meu histórico de transações para acompanhar minhas despesas e receitas.
+## 2 - Login de Usuário
 
-3. Transações e Pagamentos
+-   **US002.1**: Como um usuário, quero fazer login na plataforma para acessar minha conta.
+-   **US002.2**: Após a autenticação, a API deve gerar um token JWT para permitir o acesso a rotas protegidas.
 
-    US003.1: Como usuário, desejo realizar transferências entre contas bancárias de forma rápida e segura.
-    US003.2: Como usuário, desejo pagar contas e boletos diretamente pelo aplicativo.
+## 3 - Autenticação e Autorização
 
-4. Auditoria e Segurança
+-   **US003.1**: A API deve validar tokens JWT para todas as requisições a rotas protegidas.
+-   **US003.2**: Deve haver controle de permissões para que apenas usuários autenticados possam acessar seus próprios dados.
 
-    US004.1: Como administrador, desejo auditar transações realizadas para garantir conformidade e segurança.
-    US004.2: Como administrador, desejo configurar alertas de segurança para monitorar atividades suspeitas na conta.
+## 4 - Recuperação de Senha
 
-5. Suporte e Atendimento ao Cliente
+-   **US004.1**: Como um usuário, quero solicitar um link de redefinição de senha para recuperar o acesso à minha conta.
+-   **US004.2**: A API deve permitir que o usuário defina uma nova senha por meio de um token temporário enviado por e-mail.
 
-    US005.1: Como usuário, desejo acessar um chat de suporte para resolver dúvidas e problemas rapidamente.
-    US005.2: Como usuário, desejo visualizar um FAQ e tutoriais para ajudar com as principais funcionalidades do aplicativo.
+## 5 - Gerenciamento de Conta
+
+-   **US005.1**: Como um usuário, quero visualizar as informações da minha conta, incluindo saldo e detalhes pessoais.
+-   **US005.2**: A API deve permitir que o usuário edite suas informações, como nome e senha.
+
+## 6 - Histórico de Transações
+
+-   **US006.1**: Como um usuário, quero visualizar meu histórico de transações (depósitos, saques e transferências).
+-   **US006.2**: O sistema deve permitir filtrar transações por data e tipo.
+
+## 7 - Transações Bancárias
+
+-   **US007.1**: Como um usuário, quero fazer transferências para outras contas, fornecendo a conta de destino e o valor.
+-   **US007.2**: O sistema deve garantir que o saldo seja atualizado corretamente após cada transação.
+-   **US007.3**: O sistema deve impedir transações que deixem o saldo negativo.
+
+## 8 - Logout
+
+-   **US008.1**: Como um usuário, quero encerrar minha sessão para que ninguém mais tenha acesso à minha conta.

@@ -1,3 +1,0 @@
-# Análise
-
-## Requisitos funcionais

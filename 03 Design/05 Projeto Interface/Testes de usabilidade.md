@@ -13,3 +13,9 @@
 -   **Status:** [ ] Passou [ ] Falhou
 -   **Descrição do erro ou ajuste:**
 -   **Observação/Sugestão:** Avaliar a clareza e a facilidade de navegação na página de login. Verificar se os campos são intuitivos e a disposição é lógica para o usuário.
+
+## Funcionalidade: Parte 3 - Home - index
+
+-   **Status:** [ ] Passou [ ] Falhou
+-   **Descrição do erro ou ajuste:**
+-   **Observação/Sugestão:** Avaliar a clareza e a facilidade de navegação na página home. Verificar se os campos são intuitivos e a disposição é lógica para o usuário.

@@ -49,7 +49,7 @@ Channels (Canais)
 5. Quais são as dores da persona?
 6. Quais as necessidades da persona?
 
-Perguntas:
+Questionamentos:
 Como fazemos o escopo de um projeto?
 Como iniciamos um projeto?
 Qual é a melhor maneira de aprender o domínio?
@@ -67,5 +67,5 @@ Como evitar bugs e regressões na base de código?
 Como testamos efetivamente os requisitos?
 Devemos usar mocks? Por que ou por que não?
 O que fazemos em relação aos requisitos não funcionais? Como os descobrimos? Como os testamos?
-Como mantemos nosso código escal[avel, flexível e sustentável?
+Como mantemos nosso código escalável, flexível e sustentável?
 Como sabemos quando terminamos?
