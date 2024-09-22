@@ -1,167 +1,84 @@
 ## Sprint 1
 
-    Duração: 2 semanas (01/10/2024 - 15/10/2024)
-    Objetivos:
-        Implementar funcionalidades básicas de login e registro.
-        Configurar autenticação de dois fatores (2FA).
-    Backlog:
-        US001.1: Implementar login com e-mail e senha.
-        US001.2: Implementar autenticação de dois fatores (2FA).
-        US001.3: Implementar registro de usuário com e-mail e senha.
+-   **Duração**: [Definir duração, ex: 2 semanas]
+-   **Objetivos**:
+    -   Implementar Registro de Usuário (US001.1, US001.2)
+    -   Implementar Login de Usuário (US002.1, US002.2)
+-   **Tarefas**:
+    -   Criar rota para registro de usuário.
+    -   Implementar validação de e-mail duplicado.
+    -   Criar rota para login e geração de token JWT.
 
-**cgatGpt:** transforme as funcionalidades a seguir em histórias de usuários e cenários de teste de aceitação do tipo Give, when, then:
+**cgatGpt:** transforme as funcionalidades a seguir em histórias de usuários e cenários de teste de aceitação do tipo Give, when, then. Inclua cenários de sucesso e de erros
 
 # Histórias de Usuário e Cenários de Teste
 
-## US001.1: Implementar login com e-mail e senha
+# História de Usuário 1 - Registro de Usuário (US001.1)
 
-História de Usuário: Como usuário, desejo realizar o login com e-mail e senha para acessar minha conta, para que eu possa acessar minhas informações pessoais e funcionalidades da conta de forma segura e conveniente.
+Como um usuário, quero me registrar na plataforma para poder acessar minha conta bancária.
 
-Cenários de Teste de Aceitação:
+## Cenário de Sucesso
 
-    Cenário: Login bem-sucedido
-        Dado que o usuário está na página de login,
-        Quando ele insere um e-mail e senha válidos e clica no botão de login,
-        Então ele deve ser redirecionado para a página principal da conta e ver uma mensagem de boas-vindas.
+    Given que estou na página de registro de usuário,
+    When eu preencho todos os campos obrigatórios com dados válidos (nome, e-mail, senha) e clico no botão "Registrar",
+    Then minha conta deve ser criada com sucesso e devo receber uma confirmação de que o registro foi realizado.
 
-    Cenário: Login com credenciais incorretas
-        Dado que o usuário está na página de login,
-        Quando ele insere um e-mail ou senha incorretos e clica no botão de login,
-        Então ele deve ver uma mensagem de erro informando que as credenciais estão incorretas.
+## Cenário de Erro: Campos Obrigatórios Não Preenchidos
 
-    Cenário: Campos obrigatórios em branco
-        Dado que o usuário está na página de login,
-        Quando ele tenta fazer login sem preencher o e-mail ou a senha,
-        Então ele deve ver uma mensagem de erro informando que os campos e-mail e senha são obrigatórios.
+    Given que estou na página de registro de usuário,
+    When eu deixo um ou mais campos obrigatórios (nome, e-mail, senha) em branco e tento enviar o formulário,
+    Then o sistema deve exibir uma mensagem de erro solicitando o preenchimento de todos os campos obrigatórios.
 
-## US001.2: Implementar autenticação de dois fatores (2FA)
+## Cenário de Erro: E-mail Inválido
 
-História de Usuário: Como usuário, desejo configurar a autenticação de dois fatores (2FA) para aumentar a segurança da minha conta, para que eu possa proteger melhor minha conta contra acessos não autorizados.
+    Given que estou na página de registro de usuário,
+    When eu insiro um e-mail inválido e tento enviar o formulário,
+    Then o sistema deve exibir uma mensagem de erro informando que o e-mail não é válido.
 
-Cenários de Teste de Aceitação:
+# História de Usuário 2 - Validação de E-mail Duplicado (US001.2)
 
-    Cenário: Configuração de 2FA bem-sucedida
-        Dado que o usuário está na página de configurações de segurança,
-        Quando ele ativa a autenticação de dois fatores e completa o processo de configuração com um código enviado para o e-mail ou aplicativo autenticador,
-        Então ele deve ver uma confirmação de que a autenticação de dois fatores foi configurada com sucesso.
+Como um usuário, quero que o sistema verifique se o e-mail já está registrado para evitar duplicações.
 
-    Cenário: Login com 2FA ativado
-        Dado que o usuário tem a autenticação de dois fatores ativada,
-        Quando ele faz login com e-mail e senha válidos,
-        Então ele deve ser solicitado a inserir um código de verificação enviado para seu e-mail ou aplicativo autenticador antes de acessar a conta.
+## Cenário de Sucesso
 
-    Cenário: Falha na autenticação de 2FA
-        Dado que o usuário está na etapa de verificação de 2FA,
-        Quando ele insere um código de verificação incorreto,
-        Então ele deve ver uma mensagem de erro informando que o código de verificação está incorreto e deve tentar novamente.
+    Given que estou na página de registro de usuário,
+    When eu insiro um e-mail que ainda não está registrado no sistema,
+    Then o registro deve prosseguir normalmente e o sistema deve criar a nova conta.
 
-## US001.3: Implementar registro de usuário com e-mail e senha
+## Cenário de Erro: E-mail Já Registrado
 
-História de Usuário: Como novo usuário, desejo me registrar criando uma conta com e-mail e senha, para que eu possa acessar os serviços bancários e gerenciar minha conta.
+    Given que estou na página de registro de usuário,
+    When eu insiro um e-mail que já está registrado no sistema e tento enviar o formulário,
+    Then o sistema deve exibir uma mensagem de erro informando que o e-mail já está em uso.
 
-Cenários de Teste de Aceitação:
+# História de Usuário 3 - Login de Usuário (US002.1)
 
-    Cenário: Registro bem-sucedido
-        Dado que o usuário está na página de registro,
-        Quando ele preenche os campos de e-mail e senha e clica no botão de registrar,
-        Então ele deve receber uma confirmação de que a conta foi criada com sucesso e deve receber um e-mail de verificação para confirmar seu e-mail.
+Como um usuário, quero fazer login na plataforma para acessar minha conta bancária.
 
-    Cenário: Registro com e-mail já em uso
-        Dado que o usuário está na página de registro,
-        Quando ele preenche o campo de e-mail com um e-mail que já está registrado e tenta se registrar,
-        Então ele deve ver uma mensagem de erro informando que o e-mail já está em uso e deve tentar um e-mail diferente.
+## Cenário de Sucesso
 
-    Cenário: Campos obrigatórios em branco no registro
-        Dado que o usuário está na página de registro,
-        Quando ele tenta se registrar sem preencher o e-mail ou a senha,
-        Então ele deve ver uma mensagem de erro informando que os campos e-mail e senha são obrigatórios.
+    Given que estou na página de login,
+    When eu insiro meu e-mail e senha corretos e clico em "Entrar",
+    Then eu devo ser autenticado com sucesso e redirecionado para a página principal da minha conta.
 
-# Gerenciamento da Sprint 1
+## Cenário de Erro: E-mail ou Senha Incorretos
 
-**cgatGpt:** transforme as histórias de usuários e cenários de teste em tarefas menores e liste-as em checklist no formato markdown [ ] :
+    Given que estou na página de login,
+    When eu insiro um e-mail ou senha incorretos e clico em "Entrar",
+    Then o sistema deve exibir uma mensagem de erro informando que o e-mail ou senha estão incorretos.
 
-## Checklist de Tarefas
+# História de Usuário 4 - Geração de Token JWT após Login (US002.2)
 
-## US001.1: Implementar login com e-mail e senha
+Como um usuário, quero que o sistema gere um token JWT após o login para que eu possa acessar rotas protegidas.
 
-**História de Usuário:**
-Como usuário, desejo realizar o login com e-mail e senha para acessar minha conta, para que eu possa acessar minhas informações pessoais e funcionalidades da conta de forma segura e conveniente.
+## Cenário de Sucesso
 
-**Checklist:**
+    Given que estou autenticado com sucesso,
+    When o login é concluído,
+    Then o sistema deve gerar um token JWT e armazená-lo para que eu possa acessar as rotas protegidas.
 
--   [ ] Criar a página de login com campos para e-mail e senha.
--   [ ] Implementar a validação de entrada para e-mail e senha não vazios.
--   [ ] Implementar a lógica de autenticação para verificar e-mail e senha.
--   [ ] Desenvolver a funcionalidade para redirecionar o usuário para a página principal após um login bem-sucedido.
--   [ ] Exibir uma mensagem de boas-vindas na página principal após o login.
--   [ ] Implementar a mensagem de erro para credenciais incorretas.
--   [ ] Criar testes automatizados para os seguintes cenários:
-    -   [ ] **Cenário: Login bem-sucedido**
-        -   [ ] Dado que o usuário está na página de login,
-        -   [ ] Quando ele insere um e-mail e senha válidos e clica no botão de login,
-        -   [ ] Então ele deve ser redirecionado para a página principal da conta e ver uma mensagem de boas-vindas.
-    -   [ ] **Cenário: Login com credenciais incorretas**
-        -   [ ] Dado que o usuário está na página de login,
-        -   [ ] Quando ele insere um e-mail ou senha incorretos e clica no botão de login,
-        -   [ ] Então ele deve ver uma mensagem de erro informando que as credenciais estão incorretas.
-    -   [ ] **Cenário: Campos obrigatórios em branco**
-        -   [ ] Dado que o usuário está na página de login,
-        -   [ ] Quando ele tenta fazer login sem preencher o e-mail ou a senha,
-        -   [ ] Então ele deve ver uma mensagem de erro informando que os campos e-mail e senha são obrigatórios.
+## Cenário de Erro: Falha na Geração do Token JWT
 
----
-
-## US001.2: Implementar autenticação de dois fatores (2FA)
-
-**História de Usuário:**
-Como usuário, desejo configurar a autenticação de dois fatores (2FA) para aumentar a segurança da minha conta, para que eu possa proteger melhor minha conta contra acessos não autorizados.
-
-**Checklist:**
-
--   [ ] Criar a página de configurações de segurança.
--   [ ] Implementar a funcionalidade para ativar a autenticação de dois fatores.
--   [ ] Implementar o envio de código de verificação para o e-mail ou aplicativo autenticador.
--   [ ] Desenvolver a funcionalidade para o usuário inserir o código de verificação recebido.
--   [ ] Implementar a confirmação da configuração bem-sucedida de 2FA.
--   [ ] Adicionar uma etapa de verificação de 2FA durante o login quando a autenticação estiver ativada.
--   [ ] Criar testes automatizados para os seguintes cenários:
-    -   [ ] **Cenário: Configuração de 2FA bem-sucedida**
-        -   [ ] Dado que o usuário está na página de configurações de segurança,
-        -   [ ] Quando ele ativa a autenticação de dois fatores e completa o processo de configuração com um código enviado para o e-mail ou aplicativo autenticador,
-        -   [ ] Então ele deve ver uma confirmação de que a autenticação de dois fatores foi configurada com sucesso.
-    -   [ ] **Cenário: Login com 2FA ativado**
-        -   [ ] Dado que o usuário tem a autenticação de dois fatores ativada,
-        -   [ ] Quando ele faz login com e-mail e senha válidos,
-        -   [ ] Então ele deve ser solicitado a inserir um código de verificação enviado para seu e-mail ou aplicativo autenticador antes de acessar a conta.
-    -   [ ] **Cenário: Falha na autenticação de 2FA**
-        -   [ ] Dado que o usuário está na etapa de verificação de 2FA,
-        -   [ ] Quando ele insere um código de verificação incorreto,
-        -   [ ] Então ele deve ver uma mensagem de erro informando que o código de verificação está incorreto e deve tentar novamente.
-
----
-
-## US001.3: Implementar registro de usuário com e-mail e senha
-
-**História de Usuário:**
-Como novo usuário, desejo me registrar criando uma conta com e-mail e senha, para que eu possa acessar os serviços bancários e gerenciar minha conta.
-
-**Checklist:**
-
--   [ ] Criar a página de registro com campos para e-mail e senha.
--   [ ] Implementar a validação de entrada para e-mail e senha não vazios.
--   [ ] Implementar a lógica de registro para verificar se o e-mail já está em uso.
--   [ ] Desenvolver a funcionalidade para enviar um e-mail de verificação após o registro.
--   [ ] Implementar a confirmação de registro bem-sucedido e a verificação de e-mail.
--   [ ] Criar testes automatizados para os seguintes cenários:
-    -   [ ] **Cenário: Registro bem-sucedido**
-        -   [ ] Dado que o usuário está na página de registro,
-        -   [ ] Quando ele preenche os campos de e-mail e senha e clica no botão de registrar,
-        -   [ ] Então ele deve receber uma confirmação de que a conta foi criada com sucesso e deve receber um e-mail de verificação para confirmar seu e-mail.
-    -   [ ] **Cenário: Registro com e-mail já em uso**
-        -   [ ] Dado que o usuário está na página de registro,
-        -   [ ] Quando ele preenche o campo de e-mail com um e-mail que já está registrado e tenta se registrar,
-        -   [ ] Então ele deve ver uma mensagem de erro informando que o e-mail já está em uso e deve tentar um e-mail diferente.
-    -   [ ] **Cenário: Campos obrigatórios em branco no registro**
-        -   [ ] Dado que o usuário está na página de registro,
-        -   [ ] Quando ele tenta se registrar sem preencher o e-mail ou a senha,
-        -   [ ] Então ele deve ver uma mensagem de erro informando que os campos e-mail e senha são obrigatórios.
+    Given que o login foi autenticado com sucesso,
+    When ocorre um erro durante a geração do token JWT,
+    Then o sistema deve exibir uma mensagem de erro informando que ocorreu uma falha no processo de autenticação e o usuário não deve ser redirecionado para as rotas protegidas.

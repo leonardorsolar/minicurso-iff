@@ -85,3 +85,8 @@ expect(sum(1, 2)).toBe(3);
 8. Executar os Testes
    Execute o comando de teste que você configurou:
    npm test
+
+Exemplo para baixar:
+https://github.com/leonardorsolar/server-typescript-form-iff-start.git
+
+No typescript você terá que instalar as depenências com o comando: npm install

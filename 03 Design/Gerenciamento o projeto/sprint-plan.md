@@ -34,9 +34,10 @@ O plano da Sprint contém 4 sprints
     -   Implementar Gerenciamento de Conta (US005.1, US005.2)
     -   Implementar Histórico de Transações (US006.1, US006.2)
 -   **Tarefas**:
-    -   Criar rota para visualizar informações da conta.
-    -   Implementar edição de informações do usuário.
-    -   Criar rota para visualizar histórico de transações.
+    -   Criar rota para visualizar informações da conta, incluindo saldo e detalhes pessoais.
+    -   Implementar funcionalidade para visualizar o saldo bancário atual.
+    -   Criar funcionalidades de depósito e saque.
+    -   Criar rota para visualizar o histórico de transações, permitindo filtragem por data e tipo de transação.
 
 ## Sprint 4
 
@@ -45,6 +46,7 @@ O plano da Sprint contém 4 sprints
     -   Implementar Transações Bancárias (US007.1, US007.2, US007.3)
     -   Implementar Logout (US008.1)
 -   **Tarefas**:
-    -   Criar rota para realizar transferências.
-    -   Implementar lógica de atualização de saldo.
-    -   Criar rota para encerrar sessão.
+    -   Criar rota para realizar transferências entre contas bancárias.
+    -   Implementar lógica de atualização de saldo após transações (depósitos, saques e transferências).
+    -   Garantir que transações que causem saldo negativo sejam bloqueadas.
+    -   Criar rota para encerrar sessão e realizar logout seguro.
