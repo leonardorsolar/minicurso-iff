@@ -22,7 +22,7 @@ Cenário: registro bem-sucedido
 **Então** minha conta deve ser criada com sucesso,
 **E** devo receber uma confirmação de que o registro foi realizado.
 
-# Parte 2: Vermelho — Escreva um teste com falha.
+# Parte 2: Vermelho — Escreva um teste que falhará.
 
 Passo 1: dentro do vscode, crie o arquivo UsarioTeste.java, dentro da pasta src/test/java/com/example/server_java_form_iff_start
 Passo 2: copie e cole no arquivo UsarioTeste.java:
@@ -93,7 +93,7 @@ java.lang.Error: Unresolved compilation problems:
  Syntax error, insert ";" to complete Statement
 ```
 
-# Parte 2: Verde — Escreva apenas o código suficiente para passar no teste de falha:
+# Parte 3: Verde — Escreva apenas o código suficiente para passar no teste de falha:
 
 Passo 1: Dentro da pasta src/main/java/com/example/server_java_form_iff_start, crie o arquivo Usuario.java, e dentro do aruivo copie e cole o código da classe:
 
@@ -111,7 +111,7 @@ public class Usuario {
 
 Passo 2: Execute o teste do método
 
-# Parte 3: Refatorar — Criticar o design e refatorar o código, mantendo os testes intactos
+# Parte 4: Refatorar — Criticar o design e refatorar o código, mantendo os testes intactos
 
 Passo 1: no arquivo Usuario.js, refatore o código da sua maneira
 Passo 2: no arquivo de teste, ajuste-o caso necessário

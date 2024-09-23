@@ -22,7 +22,7 @@ Cenário: registro bem-sucedido
 **Então** minha conta deve ser criada com sucesso,
 **E** devo receber uma confirmação de que o registro foi realizado.
 
-# Parte 2: Vermelho — Escreva um teste com falha.
+# Parte 2: Vermelho — Escreva um teste que falhará.
 
 Passo 1: dentro do vscode, crie o arquivo Usuario.test.ts, dentro da pasta tests
 Passo 2: copie e cole no arquivo Usario.test.ts:
@@ -52,7 +52,8 @@ test("Deve registrar um usuário e retornar a mensagem: registrado com sucesso",
     //Then (Então faça isso - afirmação)
     //Then: O resultado esperado ou efeito da ação
     //Aqui você deve verificar se o resultado é o esperado.
-    expect().toBe()
+    expect().toBe()Passo 2: copie e cole no arquivo Usario.test.ts:
+Passo 3: Copie o texto a seguir e cole dentro da função test:
 })
 ```
 
@@ -77,9 +78,9 @@ Cannot find name 'Usuario'. Did you mean 'usuario'?ts(2552)
 Usuario.test.ts(3, 11): 'usuario' is declared here.
 ```
 
-# Parte 2: Verde — Escreva apenas o código suficiente para passar no teste de falha:
+# Parte 3: Verde — Escreva apenas o código suficiente para passar no teste de falha:
 
-Passo 1: Dentro da pasta src, crie o arquivo Usuario.ts, e dentro do aruivo copie e cole o código da classe:
+Passo 1: Dentro da pasta src, crie o arquivo Usuario.ts, e dentro do arquivo copie e cole o código da classe:
 
 ```js
 export class Usuario {
@@ -107,7 +108,7 @@ test("Deve registrar um usuário e retornar registrado com sucesso", () => {
 
 Passo 4: Para executar os testes, use o comando: npm test
 
-# Parte 3: Refatorar — Criticar o design e refatorar o código, mantendo os testes intactos
+# Parte 4: Refatorar — Criticar o design e refatorar o código, mantendo os testes intactos
 
 Passo 1: no arquivo Usuario.js, refatore o código da sua maneira
 Passo 2: no arquivo de teste, ajuste-o caso necessário
