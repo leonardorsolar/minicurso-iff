@@ -1,4 +1,4 @@
-# Dentro da pasta 00Minicurso>
+# Dentro da pasta 00Minicurso>projeto-final:
 
 Dentro da basta baixar:
 
