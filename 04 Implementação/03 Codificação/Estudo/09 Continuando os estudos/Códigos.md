@@ -36,7 +36,7 @@ Passo 4: Abra o projeto server-typescript-form-iff-mvc no vscode, digite no term
 Passo 5: Dentro do projeto server-typescript-form-iff-mvc no vscode, digite no terminal: npm start
 O servidor está rodando no porta 3000
 Passo 6: Dentro da pasta front-form, execute o arquivo index.html
-Abra o inpect na aba console.
+Abra o inspect na aba console.
 Preencha o formulário
 Passo 7: Dentro da pasta front-form, execute o arquivo index.html
 
@@ -49,7 +49,7 @@ src/main/java/com/example/server_java_form_mvc/ServerJavaFormMvcApplication.java
 Passo 5: digite no endereço do brwoser: http://localhost:3000/api/usuario
 O servidor está rodando no porta 3000
 Passo 6: Dentro da pasta front-form, execute o arquivo index.html
-Abra o inpect na aba console.
+Abra o inspect na aba console.
 Preencha o formulário
 Passo 7: Dentro da pasta front-form, execute o arquivo index.html
 

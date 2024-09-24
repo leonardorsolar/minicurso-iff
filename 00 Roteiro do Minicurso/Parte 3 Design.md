@@ -57,7 +57,7 @@ Event Storming Bank Account.drawio
 [Sujeito] [Verbo]
 Representação: sticky notes Laranja.
 
-## Parte 4.1: Defina quem são os usuáriso do sistema
+## Parte 4.1: Defina quem são os usuários do sistema
 
 (ações, interações com usuários ou software)
 
